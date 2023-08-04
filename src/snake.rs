@@ -31,15 +31,6 @@ impl Snake {
         }
     }
 
-    // pub fn dir(&self) -> Direction {
-    //     self.direction
-    // }
-
-    // pub fn r#move(&mut self) {}
-
-    // pub fn grow(&mut self, x: u32, y: u32) {
-    //     self.tail.push_back(Position { x, y })
-    // }
     pub fn update(&mut self, width: u32, height: u32) {
         if self.tail.len() > 0 {
             self.tail.push_front(self.head.clone());
@@ -90,19 +81,6 @@ impl Snake {
     pub fn get_len(&self) -> usize {
         &self.tail.len() - INITIAL_SNAKE_TAIL_LENGTH
     }
-
-    // pub fn is_alive(&self, size: (u32, u32)) -> bool {
-    // let next_pos = self.next_pos();
-    // let (width, height) = size;
-
-    // next_pos.x >= 0
-    //     && next_pos.y >= 0
-    //     && next_pos.x <= (width - 1) as i32
-    //     && next_pos.y <= (height - 1) as i32
-    //     &&
-
-    // !self.is_tail_overlapping()
-    // }
 
     pub fn is_tail_overlapping(&self) -> bool {
         for pos in self.tail.iter() {

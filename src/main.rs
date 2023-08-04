@@ -19,6 +19,7 @@ fn main() {
     // 创建PistonWindow窗口
     let mut window: PistonWindow = WindowSettings::new(WINDOW_TITLE, size)
         .resizable(false)
+        .exit_on_esc(true)
         .build()
         .unwrap_or_else(|e| panic!("Failed to build Window: {}", e));
 
@@ -33,7 +34,7 @@ fn main() {
     let mut glyphs = Glyphs::new(
         font,
         TextureContext {
-            factory: window.factory.clone(),
+            factory,
             encoder: window.factory.create_command_buffer().into(),
         },
         TextureSettings::new(),
