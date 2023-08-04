@@ -15,4 +15,14 @@ cargo build --release
 ./target/release/rsnake
 ```
 
-[学习地址](https://github.com/mara214/rsnake)
+## 操作
+
+**W** 向上
+
+**S** 向下
+
+**A** 左转
+
+**D** 右转
+
+**space** 暂停
