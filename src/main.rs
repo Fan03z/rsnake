@@ -51,7 +51,7 @@ fn main() {
         }
 
         // 打印2D窗口
-        window.draw_2d(&event, |ctx, g, _| {
+        window.draw_2d(&event, |ctx, g, device| {
             clear(colors::BACKGROUND, g);
             // 记录分数
             text::Text::new_color(colors::SCORE, 20)
@@ -63,6 +63,8 @@ fn main() {
                     g,
                 )
                 .unwrap();
+            glyphs.factory.encoder.flush(device);
+
             main.draw(ctx, g);
         });
 
